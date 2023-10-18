@@ -19,5 +19,5 @@ jobs:
       - name: Network debug
         run: |
           echo $(curl --silent https://api.ipify.org) || true
-          sudo apt install nmap -y
+          sudo apt-get -qq install nmap -y
           sudo nmap -sS -p 443 -Pn --traceroute translations.zakodium.com

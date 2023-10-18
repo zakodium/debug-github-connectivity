@@ -18,6 +18,6 @@ jobs:
     steps:
       - name: Network debug
         run: |
-          echo $(curl --silent https://api.ipify.org) || true
+          echo "runner IP:" $(curl --silent https://api.ipify.org) || true
           DEBIAN_FRONTEND=noninteractive sudo apt-get -qq install nmap -y > /dev/null
           sudo nmap -sS -p 443 -Pn --traceroute translations.zakodium.com

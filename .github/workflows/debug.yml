@@ -19,6 +19,5 @@ jobs:
       - name: Network debug
         run: |
           echo $(curl --silent https://api.ipify.org) || true
-          ping -c 4 translations.zakodium.com || true
-          sudo apt install traceroute -y
-          traceroute translations.zakodium.com
+          sudo apt install nmap -y
+          sudo nmap -sS -p 443 -Pn --traceroute translations.zakodium.com
